@@ -2,7 +2,7 @@
 # the same string with the words in reverse order.
 
 def reverse(string)
-  puts string.split(" ").reverse.join(" ")
+  string.split.reverse.join(" ")
 end
 
 reverse("My name is Andy March")
