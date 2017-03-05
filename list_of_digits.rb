@@ -1,21 +1,30 @@
-# Write a method that takes one argument, a positive integer,
-# and returns a list of the digits in the number.
-# I will need to split the digits up ('.split'method?)
-# this means I will need to convert the integer passed in first to a string (for split method)
-# then back to an integer
+# Write a method that takes one argument, a positive integer, and returns a list of the digits in the number.
 
-def list_of_digits(int)
-  integer_list = int.to_s.split('')
+# INPUT: positive integer
+# OUTPUT: list of digits in the number
+# RULES: the passed in integer needs to be split to be able to print out the slplit numbers in a list
+
+# TEST CASES:
+# list(2) => 2
+# list(23) => 2, 3
+# list(423) => 4, 2, 3
+
+# DATA STRUCTURES:
+# input: integer
+# rules: some sort of list to store the integer
+# output: list of digits
+
+#ALGORITHM:
+# convert passed in integer to a string to be able to use '.split' (string method)
+# this will return an array of these split 'strings'
+# store that in a variable
+# iterate through the new array and convert the splt strings back to integers
+# print out the array
+
+def list_of_digits(integer)
+  array = integer.to_s.split('')
+  array.each {|num| num.to_i}
+  puts array
 end
 
-list_of_digits(209876)
-
-# the above works, but returns a list of strings, not integers
-
-def list_of_integers(num)
-  list = num.to_s.split('')
-  list.map {|num| num.to_i}
-  puts list
-end
-
-list_of_integers(442)
+list_of_digits(245)
